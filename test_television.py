@@ -63,7 +63,7 @@ def test_volume_down(tv):
     tv.power()
     tv.volume_up()
     tv.volume_down()
-    assert tv._Television__volume == Television.MAX_VOLUME - 1
+    assert tv._Television__volume == Television.MIN_VOLUME
     tv.mute()
     tv.volume_down()
     assert tv._Television__volume == Television.MIN_VOLUME
