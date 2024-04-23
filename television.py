@@ -12,11 +12,11 @@ class Television:
     self.__channel = self.MIN_CHANNEL
 
   def power(self):
-    self.__status = not self.status
-      
+    self.__status = not self.__status
+        
   def mute(self):
     if self.__status:
-      self.__muted = not self.muted
+      self.__muted = not self.__muted
 
   def channel_up(self):
     if self.__status:
