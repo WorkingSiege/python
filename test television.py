@@ -1,6 +1,7 @@
 import pytest
 from television import Television
 
+@pytest.fixture
 def tv():
     return Television()
 
