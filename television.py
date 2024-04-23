@@ -6,53 +6,53 @@ class Television:
   MAX_CHANNEL = 3
 
   def __init__(self):        
-    self.status = False
-    self.muted = False
-    self.volume = self.MIN_VOLUME
-    self.channel = self.MIN_CHANNEL
+    self.__status = False
+    self.__muted = False
+    self.__volume = self.MIN_VOLUME
+    self.__channel = self.MIN_CHANNEL
 
   def power(self):
-    self.status = not self.status
+    self.__status = not self.status
       
   def mute(self):
-    if self.status:
-      self.muted = not self.muted
+    if self.__status:
+      self.__muted = not self.muted
 
   def channel_up(self):
-    if self.status:
-      if self.channel < self.MAX_CHANNEL:
-        self.channel += 1
+    if self.__status:
+      if self.__channel < self.MAX_CHANNEL:
+        self.__channel += 1
       else:
-        self.channel = self.MIN_CHANNEL
+        self.__channel = self.MIN_CHANNEL
 
   def channel_down(self):
-    if self.status:
-      if self.channel > self.MIN_CHANNEL:
-        self.channel -= 1
+    if self.__status:
+      if self.__channel > self.MIN_CHANNEL:
+        self.__channel -= 1
       else:
-        self.channel = self.MAX_CHANNEL        
-  
+        self.__channel = self.MAX_CHANNEL        
+
   def volume_up(self):
-    if self.status:
-      if self.muted:
-        self.muted = False
-      if self.volume < self.MAX_VOLUME:
-        self.volume += 1
-  
+    if self.__status:
+      if self.__muted:
+        self.__muted = False
+      if self.__volume < self.MAX_VOLUME:
+        self.__volume += 1
+
   def volume_down(self):
-    if self.status:
-      if self.muted:
-        self.muted = False
-      if self.volume > self.MIN_VOLUME:
-        self.volume -= 1
+    if self.__status:
+      if self.__muted:
+        self.__muted = False
+      if self.__volume > self.MIN_VOLUME:
+        self.__volume -= 1
   
   def __str__(self):
-    if self.muted:
+    if self.__muted:
       volume_str = "0"
     else:
-      volume_str = str(self.volume)
+      volume_str = str(self.__volume)
     return (
-            f"Power: {self.status}\n"
-            f"Channel: {self.channel}\n"
+            f"Power: {self.__status}\n"
+            f"Channel: {self.__channel}\n"
             f"Volume: {volume_str}\n"
         )
