@@ -5,26 +5,25 @@ class Television:
   MIN_CHANNEL = 0
   MAX_CHANNEL = 3
 
-  def __init__(self):        
+  def __init__(self):     
+    """
+    Initializes a Television object.
+
+    :param __status (bool) The power status of the television.
+    :param __muted (bool): Whether the television is muted.
+    :param __volume (int): The current volume level.
+    :param __channel (int): The current channel.
+    """   
     self.__status = False
     self.__muted = False
     self.__volume = self.MIN_VOLUME
     self.__channel = self.MIN_CHANNEL
 
-    """
-    Initialize a Television object.
-
-    Attributes:
-        __status (bool): The power status of the television.
-        __muted (bool): Whether the television is muted.
-        __volume (int): The current volume level.
-        __channel (int): The current channel.
-    """
   def power(self):
     """Toggle the power status of the television."""
     self.__status = not self.__status
         
-  def mute(self):
+  def mute(self, __muted):
     """Toggle the mute status of the television if it's powered on."""
     if self.__status:
       self.__muted = not self.__muted
